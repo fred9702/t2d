@@ -17,18 +17,16 @@ export default function Home() {
       <MaxWidthWrapper className="mt-10 flex flex-col items-center justify-center text-center sm:mt-12">
         <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
           <p className="text-sm font-semibold text-gray-700">
-            Try Convo for Free
+            Try T2D for Free
           </p>
         </div>
 
         <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
-          <span className="text-blue-600">Speech</span> Focused Language
-          Learning
+          <span className="text-blue-600">Text</span> to <span className="text-blue-600">Data</span> 
         </h1>
 
         <p className="mt-5 max-w-prose text-lg text-zinc-700 sm:text-2xl">
-          Convo helps you improve your spoken fluency with the help of an AI
-          tutor.
+          T2D helps you extract actionable insights from textual data at scale
         </p>
 
         <Link
@@ -41,7 +39,7 @@ export default function Home() {
           )}
           href={"/dashboard"}
         >
-          Start Speaking Now
+          Start Now
         </Link>
       </MaxWidthWrapper>
 
@@ -104,8 +102,7 @@ export default function Home() {
                   Start your first session in seconds
                 </h2>
                 <p className="mt-4 text-lg text-gray-600">
-                  Improving your spoken fluency has never been easier than with
-                  Convo.
+                  Gaining insights from text has never been easier than with T2D.
                 </p>
               </div>
             </div>
@@ -138,8 +135,7 @@ export default function Home() {
                     Step 2
                   </span>
                   <span className="text-xl font-semibold">
-                    Choose a <span className="text-blue-600">Language</span> &{" "}
-                    <span className="text-blue-600">Scenario</span>
+                    Upload a <span className="text-blue-600">JSON</span> or <span className="text-blue-600">CSV</span> file
                   </span>
                 </div>
               </li>
@@ -149,7 +145,7 @@ export default function Home() {
                     Step 3
                   </span>
                   <span className="text-xl font-semibold">
-                    Start Your Speaking Session
+                    Get your insights, in any format
                   </span>
                   {/* <span className="mt-2 text-zinc-700">
                 
@@ -164,11 +160,10 @@ export default function Home() {
             <div className="mb-6 px-6 lg:px-8">
               <div className="mx-auto max-w-2xl sm:text-center">
                 <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
-                  Practice in Real Life Scenarios
+                  Use Cases
                 </h2>
                 <p className="mt-4 text-lg text-gray-600">
-                  Get help if you make a mistake and guidance on saying
-                  something in your target language.
+                  Use T2D to convert text into data and produce actionable insights
                 </p>
               </div>
             </div>
@@ -177,9 +172,9 @@ export default function Home() {
             <div className="flex items-center justify-center">
               <div className="flex flex-col gap-6 md:flex-row">
                 <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>At the Cafe</CardTitle>
+                  <CardTitle>E-commerce</CardTitle>
                   <CardDescription className="mb-3 text-center">
-                    Learn how to order drinks and snacks
+                    Learn what you're doing well and what needs improving from product reviews
                   </CardDescription>
                   <Image
                     src="/coffee.webp"
@@ -190,23 +185,22 @@ export default function Home() {
                   />
                 </Card>
                 <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>Getting A Taxi</CardTitle>
+                  <CardTitle>Social Media</CardTitle>
                   <CardDescription className="mb-3 text-center">
-                    Learn how to navigate and get directions
+                    Analyze audience feedback to understand preferences and trends, and tailor content.
                   </CardDescription>
                   <Image
-                    src="/taxi.webp"
+                    src="/schedule.webp"
                     alt="cafe scenario"
                     width={128}
                     height={128}
                     quality={100}
                   />
                 </Card>
-
                 <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>Social Activities</CardTitle>
+                  <CardTitle>Human Resources</CardTitle>
                   <CardDescription className="mb-3 text-center">
-                    Learn how to make plans and catch up with friends
+                    Analyze employee feedback from surveys to improve workplace satisfaction 
                   </CardDescription>
                   <Image
                     src="/schedule.webp"
@@ -224,98 +218,36 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Powered By */}
-          <div>
+          
+          {/* Pricing */}
+          <div id="pricing">
             <div className="mb-6 px-6 lg:px-8">
               <div className="mx-auto max-w-2xl sm:text-center">
                 <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
-                  Powered by
+                  Pricing
                 </h2>
-                <p className="mt-4 text-lg text-gray-600">
-                  These are the technologies behind the scene that make Convo
-                  possible
-                </p>
               </div>
             </div>
-
             <div className="flex items-center justify-center">
               <div className="flex flex-col gap-6 md:flex-row">
-                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>Whisper AI</CardTitle>
+                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1 ">
+                  <CardTitle>Free</CardTitle>
                   <CardDescription className="mb-3 text-center">
-                    Speech to text
+                    Free Plan
                   </CardDescription>
-                  <Image
-                    src="/mic.webp"
-                    alt="cafe scenario"
-                    width={128}
-                    height={128}
-                    quality={100}
-                    className="rounded-xl"
-                  />
                 </Card>
                 <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>GPT 4</CardTitle>
+                  <CardTitle>Pro</CardTitle>
                   <CardDescription className="mb-3 text-center">
-                    Comprehensive prompts and responses
+                    Pro Plan
                   </CardDescription>
-                  <Image
-                    src="/openai.webp"
-                    alt="cafe scenario"
-                    width={128}
-                    height={128}
-                    quality={100}
-                    className="rounded-xl"
-                  />
                 </Card>
-
                 <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>WebSpeech</CardTitle>
+                  <CardTitle>Enterprise</CardTitle>
                   <CardDescription className="mb-3 text-center">
-                    Text to speech
+                    Enterprise Plan
                   </CardDescription>
-                  <Image
-                    src="/speaker.webp"
-                    alt="cafe scenario"
-                    width={128}
-                    height={128}
-                    quality={100}
-                    className="rounded-xl"
-                  />
                 </Card>
-              </div>
-            </div>
-          </div>
-
-          {/* Feedback */}
-          <div>
-            <div className="mb-6 px-6 lg:px-8">
-              <div className="mx-auto max-w-2xl sm:text-center">
-                <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
-                  Feedback
-                </h2>
-                <p className="mt-4 text-lg text-gray-600">
-                  What are people saying about Convo
-                </p>
-              </div>
-            </div>
-            {/* steps */}
-
-            <div>
-              <div className="mx-auto flex max-w-6xl justify-center px-6 lg:px-8">
-                <div className="flow-root">
-                  <div className="-m-2 w-fit rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10  lg:-m-4 lg:rounded-2xl lg:p-4">
-                    <Image
-                      width={2556}
-                      height={1436}
-                      quality={100}
-                      src="/tweet_collage.png"
-                      alt="Header image"
-                      className="rounded-md bg-white p-2 shadow-2xl ring-1 ring-gray-900/10 md:p-8"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -52,7 +52,7 @@ const Navbar = () => {
               {!isUserSignedIn ? (
                 <>
                   <Link
-                    href="/pricing"
+                    href="#pricing"
                     className={buttonVariants({
                       variant: "ghost",
                       size: "sm",
