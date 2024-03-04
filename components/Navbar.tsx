@@ -52,6 +52,15 @@ const Navbar = () => {
               {!isUserSignedIn ? (
                 <>
                   <Link
+                    href="#use-cases"
+                    className={buttonVariants({
+                      variant: "ghost",
+                      size: "sm",
+                    })}
+                  >
+                    Scenarios
+                  </Link>
+                  <Link
                     href="#pricing"
                     className={buttonVariants({
                       variant: "ghost",

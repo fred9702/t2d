@@ -156,7 +156,7 @@ export default function Home() {
           </div>
 
           {/* Scenarios */}
-          <div>
+          <div id="use-cases">
             <div className="mb-6 px-6 lg:px-8">
               <div className="mx-auto max-w-2xl sm:text-center">
                 <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
@@ -174,7 +174,7 @@ export default function Home() {
                 <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
                   <CardTitle>E-commerce</CardTitle>
                   <CardDescription className="mb-3 text-center">
-                    Learn what you're doing well and what needs improving from product reviews
+                    Learn what you&apos;re doing well and what needs improving from product reviews
                   </CardDescription>
                   <Image
                     src="/coffee.webp"
