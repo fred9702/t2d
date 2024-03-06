@@ -15,6 +15,8 @@ from api.fastapi_response_templates.PrettyJsonResponse import ORJSONPrettyRespon
 from api.dlai import review_template_2
 from api.ReviewTemplates import ReviewTemplate
 from langchain.globals import set_verbose
+import csv
+import codecs
 
 set_verbose(True)
 
@@ -58,10 +60,11 @@ def healthchecker():
 async def upload_csv_file(platform: str = Form(...), file: UploadFile = File(...)):
     # Read CSV file with Pandas
     csv_content = file.file
-    data = pd.read_csv(csv_content)
-    data_dict = data.to_dict(orient='records')
+    data = csv.DictReader(codecs.iterdecode(csv_content, 'utf-8'))
+    data_dict = [row for row in data]
     file.file.close()
 
+    print(data_dict)
     inputs = []
     # Extract relevant keys from dict
     if platform.lower() == "shopify":
