@@ -17,6 +17,11 @@ import {
 import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useMutation } from '@tanstack/react-query'
+import {Loader2} from 'lucide-react';
+
+export const Icons = {
+  spinner: Loader2,
+};
 
 type Props = {}
 
@@ -107,7 +112,7 @@ function FormComponent({ onSubmit, defaultValues, isSubmitting}: FormProps) {
             );
           }}
         />
-        <Button type="submit" disabled={isSubmitting}>Submit</Button>
+        {isSubmitting ? <Icons.spinner className="h-4 w-4 animate-spin" /> : <Button type="submit">Submit</Button>}
       </form>
     </Form>
   )
@@ -116,7 +121,6 @@ function FormComponent({ onSubmit, defaultValues, isSubmitting}: FormProps) {
 export function T2DForm() {
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
-      console.log(data);
       var formData = new FormData()
       data.file && formData.append("file",  data.file[0]) 
       formData.append("platform", data.platform) 
@@ -139,7 +143,11 @@ export function T2DForm() {
     <FormComponent 
       defaultValues={{platform: "Shopify"}}
       onSubmit={async (data) => {
-        await mutation.mutate(data);
+        await mutation.mutate(data, {
+          onSuccess: (data, variables, context) => {
+            console.log(data?.data)
+          },
+        });
       }}
       isSubmitting={mutation.isPending}
     />

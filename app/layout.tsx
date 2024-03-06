@@ -19,6 +19,9 @@ export default function RootLayout({
   return (
     <QueryProvider>
       <html lang="en" className="light">
+        <head>
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+        </head>
         <body
           className={cn(
             "grainy flex min-h-screen flex-col font-sans antialiased",

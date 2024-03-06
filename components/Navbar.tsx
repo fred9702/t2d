@@ -31,7 +31,7 @@ const Navbar = () => {
               quality={100}
               className="w-7 h-7"
             />
-            <span className="text-2xl font-semibold">Convo</span>
+            <span className="text-2xl font-semibold">Cottai</span>
           </Link>
           <div className="flex gap-1 sm:gap-4 items-center">
             {!isUserSignedIn ? (

@@ -11,10 +11,18 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv, find_dotenv
-
 from api.fastapi_response_templates.PrettyJsonResponse import ORJSONPrettyResponse
 from api.dlai import review_template_2
 from api.ReviewTemplates import ReviewTemplate
+from langchain.globals import set_verbose
+
+set_verbose(True)
+
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # API
 app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
@@ -44,7 +52,7 @@ def read_root():
 
 @app.get("/api/healthchecker")
 def healthchecker():
-    return {"status": "success", "message": "Integrate FastAPI Framework with Next.js"}
+    return {"status": "up"}
     
 @app.post("/api/uploader/csv", response_class=ORJSONPrettyResponse)
 async def upload_csv_file(platform: str = Form(...), file: UploadFile = File(...)):
@@ -56,7 +64,7 @@ async def upload_csv_file(platform: str = Form(...), file: UploadFile = File(...
 
     inputs = []
     # Extract relevant keys from dict
-    if platform == "shopify":
+    if platform.lower() == "shopify":
       inputs = [dict["body"] for dict in data_dict]
 
     # 2. Initialise Model
